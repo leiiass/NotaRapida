@@ -1,0 +1,41 @@
+.acoes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.botao {
+  margin: 5px;
+  margin-top: 70px;
+  width: 200px;
+}
+
+.criar-notas {
+  padding: 2rem 0;
+}
+
+.criar-notas form {
+  background: #C4EDFF;
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.criar-notas form label {
+  color: #154580;
+  font-weight: bold;
+  margin: 0 0 1rem;
+}
+
+.criar-notas form textarea {
+  border: none;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+}

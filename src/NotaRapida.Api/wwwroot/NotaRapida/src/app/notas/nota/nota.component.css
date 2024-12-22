@@ -1,0 +1,52 @@
+.acoes {
+    display: flex;
+    justify-content: flex-end
+  }
+  
+  .botao-excluir {
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+    margin-top: 10px;
+  }
+  
+  .botao-editar {
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  
+  .nota {
+    background-color: #F8F9FE;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .nota .conteudo {
+    margin: 1rem auto;
+    word-wrap: break-word;
+  }
+  
+  .nota .autoria {
+    word-wrap: break-word;
+  }
+  
+  .nota-g {
+    width: 556px;
+  }
+  
+  .nota-p {
+    width: 262px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .nota-g {
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 426px) {
+    .nota-p {
+      width: 100%;
+    }
+  }
