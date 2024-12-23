@@ -18,9 +18,10 @@
   }
   
   .nota {
-    background-color: #F8F9FE;
+    background-color: #eff0f7;
     padding: 1rem;
     box-sizing: border-box;
+    width: 15rem;
   }
   
   .nota .conteudo {
@@ -30,6 +31,18 @@
   
   .nota .autoria {
     word-wrap: break-word;
+  }
+  
+  .modelo1 {
+    box-shadow: 8px 8px 0px #154580;
+  }
+  
+  .modelo2 {
+    box-shadow: 8px 8px 0px #6BD1FF;
+  }
+  
+  .modelo3 {
+    box-shadow: 8px 8px 0px #84EEC1;
   }
   
   .nota-g {

@@ -15,10 +15,17 @@ namespace NotaRapida.Api.Server.Controllers
         }
 
         [HttpGet("tb01")]
-        public OkObjectResult ObterTodos([FromQuery] DateTime? dataModificacao)
+        public OkObjectResult ObterTodos()
         {
-            var notas = _servicoNota.ObterTodos(dataModificacao);
+           var notas = _servicoNota.ObterTodos();
             return Ok(notas);
+        }
+
+        [HttpGet("{id}/tb01")]
+        public OkObjectResult ObterPorId(int id)
+        {
+            var nota = _servicoNota.ObterPorId(id);
+            return Ok(nota);
         }
 
         [HttpPost("tb01/create")]

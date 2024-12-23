@@ -6,7 +6,7 @@ namespace NotaRapida.Dominio.Interfaces
 {
     public interface IRepositorioNota
     {
-        List<Nota> ObterTodos(DateTime? dataModificacao);
+        List<Nota> ObterTodos();
         Nota ObterPorId(int id);
         Nota Criar(Nota nota);
         void Atualizar(int id, string texto);

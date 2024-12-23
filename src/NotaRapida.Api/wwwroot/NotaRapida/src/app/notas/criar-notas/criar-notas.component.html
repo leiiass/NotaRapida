@@ -3,10 +3,10 @@
         <h2>Adicione uma <br>nova nota:</h2>
     </header>
     <form>
-        <textarea id="nota" name="nota"></textarea>
+        <textarea id="nota" name="nota" [(ngModel)]="nota.texto"></textarea>
         <div class="acoes">
-            <button class="botao">Salvar</button>
-            <button class="botao">Cancelar</button>
+            <button (click)="aoClicarEmSalvar()" class="botao">Salvar</button>
+            <button [routerLink]="['/listarNotas']" class="botao">Cancelar</button>
         </div>
     </form>
 </section>

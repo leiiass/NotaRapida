@@ -15,7 +15,7 @@ namespace NotaRapida.Infraestrutura.Repositorios
             _gerenciadorBancoDeDados = gerenciadorBancoDeDados;
         }
 
-        public List<Nota> ObterTodos(DateTime? dataModificacao)
+        public List<Nota> ObterTodos()
         {
             var notas = new List<Nota>();
 
@@ -24,22 +24,11 @@ namespace NotaRapida.Infraestrutura.Repositorios
                 conexao.Open();
 
                 string query = "SELECT * FROM TB01";
-                if (dataModificacao.HasValue)
-                {
-                    query += " WHERE ";
-                    if (dataModificacao.HasValue)
-                    {
-                        query += "col_dt = @DataModificacao";
-                    }
-                }
+
+                query += " ORDER BY col_dt DESC LIMIT 10";
 
                 using (var comando = new SQLiteCommand(query, conexao))
                 {
-                    if (dataModificacao.HasValue)
-                    {
-                        comando.Parameters.AddWithValue("@DataModificacao", dataModificacao.Value);
-                    }
-
                     using (var reader = comando.ExecuteReader())
                     {
                         while (reader.Read())
@@ -57,6 +46,7 @@ namespace NotaRapida.Infraestrutura.Repositorios
 
             return notas;
         }
+
 
         public Nota ObterPorId(int id)
         {
@@ -99,7 +89,7 @@ namespace NotaRapida.Infraestrutura.Repositorios
                 using (var comando = new SQLiteCommand(query, conexao))
                 {
                     comando.Parameters.AddWithValue("@Texto", nota.Texto);
-                    comando.Parameters.AddWithValue("@Data", nota.DataModificacao);
+                    comando.Parameters.AddWithValue("@Data", new DateTime(2024, 12, 20));
                     comando.ExecuteNonQuery();
                 }
 

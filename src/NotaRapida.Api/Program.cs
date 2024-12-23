@@ -12,6 +12,16 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
 builder.Services.AddScoped<GerenciadorBancoDeDados>();
 var gerenciadorBancoDeDados = new GerenciadorBancoDeDados();
 gerenciadorBancoDeDados.CriarBancoSQLite();
@@ -30,6 +40,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseStaticFiles();
+
+app.UseCors("AllowAllOrigins");
 
 app.UseHttpsRedirection();
 

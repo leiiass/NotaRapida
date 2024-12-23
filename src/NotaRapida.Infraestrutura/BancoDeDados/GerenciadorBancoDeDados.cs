@@ -6,7 +6,7 @@ namespace NotaRapida.Infraestrutura.BancoDeDados
 {
     public class GerenciadorBancoDeDados
     {
-        private readonly string _caminhoBanco = @"C:\Users\Léia Mendes\Desktop\Projetos\NotaRapida\bancoDeDados\Nota.sqlite";
+        private readonly string _caminhoBanco = @"C:\Projetos\NotaRapida\bancoDeDados\Nota.sqlite";
 
         public void CriarBancoSQLite()
         {
