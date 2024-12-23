@@ -1,0 +1,13 @@
+<section class="container editar-notas ff-inter">
+    <header class="header">
+        <h2>Adicione uma <br>nova nota:</h2>
+    </header>
+    <form>
+        <textarea id="nota" name="nota" [(ngModel)]="nota.texto"></textarea>
+      
+      <div class="acoes">
+        <button (click)="aoClicarEmSalvar()" class="botao">Salvar</button>
+        <button (click)="aoClicarEmCancelar()" class="botao">Cancelar</button>
+      </div>
+    </form>
+  </section>

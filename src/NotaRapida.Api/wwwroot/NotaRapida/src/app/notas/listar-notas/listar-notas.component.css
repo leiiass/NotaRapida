@@ -1,0 +1,77 @@
+.mural {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin: 1rem 0 2rem;
+}
+
+.d-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.filter-container {
+  display: grid;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.filter-label {
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.filter-input {
+  border: none;
+  width: 250px;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: #eff0f7;
+  font-size: 16px;
+}
+
+.conteiner-filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alinhamento-botao{
+  margin-top: 1rem;
+  margin-right: 10px;
+}
+
+.botao-refresh{
+  background: #154580;
+  color: #ffffff;
+  max-width: 270px;
+  width: 150px;
+  padding: 1rem;
+  margin: 0 auto;
+  border: 2px solid #154580;
+  border-radius: 10px;
+  transition: 0.5s ease;
+}
+
+.btn-primary {
+  width: 55px; 
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin: 0 auto;
+  background-color: #154580 !important; 
+  border-color: #154580 !important;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.bi {
+  font-size: 2rem;
+}

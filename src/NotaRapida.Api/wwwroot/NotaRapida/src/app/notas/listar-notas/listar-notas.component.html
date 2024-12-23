@@ -1,0 +1,11 @@
+<section class="container">
+  <header class="header d-flex">
+    <h2 class="ff-inter">Minhas notas</h2>
+    <button [routerLink]="['/criarNota']" class="botao">Adicionar nota</button>
+  </header>
+  <div class="mural">
+    <div *ngFor="let nota of listarNotas">
+      <app-nota [nota]="nota"></app-nota>
+    </div>
+  </div>
+</section>

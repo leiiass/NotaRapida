@@ -1,0 +1,65 @@
+.acoes {
+    display: flex;
+    justify-content: flex-end
+  }
+  
+  .botao-excluir {
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+    margin-top: 10px;
+  }
+  
+  .botao-editar {
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  
+  .nota {
+    background-color: #eff0f7;
+    padding: 1rem;
+    box-sizing: border-box;
+    width: 15rem;
+  }
+  
+  .nota .conteudo {
+    margin: 1rem auto;
+    word-wrap: break-word;
+  }
+  
+  .nota .autoria {
+    word-wrap: break-word;
+  }
+  
+  .modelo1 {
+    box-shadow: 8px 8px 0px #154580;
+  }
+  
+  .modelo2 {
+    box-shadow: 8px 8px 0px #6BD1FF;
+  }
+  
+  .modelo3 {
+    box-shadow: 8px 8px 0px #84EEC1;
+  }
+  
+  .nota-g {
+    width: 556px;
+  }
+  
+  .nota-p {
+    width: 262px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .nota-g {
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 426px) {
+    .nota-p {
+      width: 100%;
+    }
+  }

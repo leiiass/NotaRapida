@@ -13,10 +13,15 @@ namespace NotaRapida.Servicos.Servicos
             _repositorioNota = repositorioNota;
         }
 
-        public List<Nota> ObterTodos(DateTime? dateTime)
+        public List<Nota> ObterTodos()
         {
-            var notas = _repositorioNota.ObterTodos(dateTime);
+            var notas = _repositorioNota.ObterTodos();
             return notas;
+        }
+
+        public Nota ObterPorId(int id)
+        {
+           return _repositorioNota.ObterPorId(id);
         }
 
         public Nota Criar(Nota nota)
