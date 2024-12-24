@@ -1,6 +1,5 @@
 ﻿using NotaRapida.Dominio.Interfaces;
 using NotaRapida.Dominio.Modelos;
-using System;
 using System.Collections.Generic;
 
 namespace NotaRapida.Servicos.Servicos

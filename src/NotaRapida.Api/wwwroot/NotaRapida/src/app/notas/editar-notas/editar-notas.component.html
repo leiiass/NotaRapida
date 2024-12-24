@@ -1,13 +1,16 @@
 <section class="container editar-notas ff-inter">
-    <header class="header">
-        <h2>Adicione uma <br>nova nota:</h2>
-    </header>
-    <form>
-        <textarea id="nota" name="nota" [(ngModel)]="nota.texto"></textarea>
-      
-      <div class="acoes">
-        <button (click)="aoClicarEmSalvar()" class="botao">Salvar</button>
-        <button (click)="aoClicarEmCancelar()" class="botao">Cancelar</button>
-      </div>
-    </form>
-  </section>
+  <header class="header">
+    <h2>Adicione uma <br>nova nota:</h2>
+  </header>
+  <form>
+    <textarea id="nota" maxlength="200" name="nota" [(ngModel)]="nota.texto"></textarea>
+    <div class="acoes">
+      <button (click)="aoClicarEmSalvar()" class="botao">Salvar</button>
+      <button (click)="aoClicarEmCancelar()" class="botao">Cancelar</button>
+    </div>
+  </form>
+</section>
+
+<app-modal-mensagem *ngIf="exibirModal" [titulo]="tituloModal" [mensagem]="mensagemModal" [botaoTexto]="'OK'"
+  (fechar)="fecharModal()">
+</app-modal-mensagem>

@@ -16,7 +16,6 @@ import { FormsModule } from '@angular/forms';
 export class ListarNotasComponent implements OnInit{
 
   listarNotas: any[] = [];
-  erro: string | null = null;
   dataFiltro: string | null = null;
 
   constructor(private notaRapidaService: NotaRapidaService) { }
@@ -27,15 +26,7 @@ export class ListarNotasComponent implements OnInit{
 
   carregarNotas(): void {
     this.notaRapidaService.obterTodasNotas().subscribe({
-      next: (notas) => (this.listarNotas = notas),
-      error: (err) => (this.erro = 'Erro ao carregar as notas'),
-    });
-  }
-
-  removerNota(id: number): void {
-    this.notaRapidaService.removerNota(id).subscribe({
-      next: () => this.carregarNotas(),
-      error: () => (this.erro = 'Erro ao remover a nota')
+      next: (notas) => (this.listarNotas = notas)
     });
   }
 }
