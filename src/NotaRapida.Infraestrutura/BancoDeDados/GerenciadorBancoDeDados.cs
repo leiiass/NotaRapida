@@ -19,7 +19,7 @@ namespace NotaRapida.Infraestrutura.BancoDeDados
             }
             catch (Exception ex)
             {
-                throw;
+                throw new Exception("Ocorreu um erro inesperado ao criar o banco de dados.", ex);
             }
         }
 
@@ -32,11 +32,10 @@ namespace NotaRapida.Infraestrutura.BancoDeDados
         {
             try
             {
-                using (var conexao = CriarConexao())
-                {
-                    conexao.Open();
+                using var conexao = CriarConexao();
+                conexao.Open();
 
-                    string comandoCriacao = @"
+                string comandoCriacao = @"
                         CREATE TABLE IF NOT EXISTS TB01 (
                             ID INTEGER PRIMARY KEY AUTOINCREMENT,
                             col_texto TEXT,
@@ -44,15 +43,12 @@ namespace NotaRapida.Infraestrutura.BancoDeDados
                         );
                     ";
 
-                    using (var comando = new SQLiteCommand(comandoCriacao, conexao))
-                    {
-                        comando.ExecuteNonQuery();
-                    }
-                }
+                using var comando = new SQLiteCommand(comandoCriacao, conexao);
+                comando.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-                throw;
+                throw new Exception("Erro inesperado ao criar a tabela TB01.", ex);
             }
         }
     }

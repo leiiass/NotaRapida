@@ -21,7 +21,8 @@
     background-color: #eff0f7;
     padding: 1rem;
     box-sizing: border-box;
-    width: 15rem;
+    width: 20rem;
+    max-height: 20rem;
   }
   
   .nota .conteudo {

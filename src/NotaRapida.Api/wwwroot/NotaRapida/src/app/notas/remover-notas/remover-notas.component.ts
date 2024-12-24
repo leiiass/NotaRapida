@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { Router, RouterModule, ActivatedRoute } from '@angular/router';
 import { NotaRapidaService } from '../../servicos/nota-rapida.service';
 
+const ROTA_LISTA = "/listarNotas";
+
 @Component({
   selector: 'app-remover-notas',
   standalone: true,
@@ -16,7 +18,8 @@ export class RemoverNotasComponent {
   constructor(private service: NotaRapidaService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
+    const parametroId = "id";
+    const id = this.route.snapshot.paramMap.get(parametroId);
     this.service.obterPorId(parseInt(id!)).subscribe((nota) => {
       this.nota = nota
     })
@@ -24,18 +27,12 @@ export class RemoverNotasComponent {
 
   aoClicarEmRemover() {
     this.service.removerNota(this.nota.id!).subscribe({
-      next: (res) => {
-        console.log('Nota removida com sucesso:', res);
-        this.router.navigate(['/listarNotas']);
-      },
-      error: (err) => {
-        console.error('Erro ao remover a nota:', err);
-      }
+      next: () => this.router.navigate([ROTA_LISTA])
     });
   }
 
   aoClicarEmCancelar() {
-    this.router.navigate(['/listarNotas'])
+    this.router.navigate([ROTA_LISTA])
   }
 
 }
