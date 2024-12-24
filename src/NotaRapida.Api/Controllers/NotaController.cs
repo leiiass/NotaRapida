@@ -2,7 +2,7 @@
 using NotaRapida.Dominio.Modelos;
 using NotaRapida.Servicos.Servicos;
 
-namespace NotaRapida.Api.Server.Controllers
+namespace NotaRapida.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -17,7 +17,7 @@ namespace NotaRapida.Api.Server.Controllers
         [HttpGet("tb01")]
         public OkObjectResult ObterTodos()
         {
-           var notas = _servicoNota.ObterTodos();
+            var notas = _servicoNota.ObterTodos();
             return Ok(notas);
         }
 
